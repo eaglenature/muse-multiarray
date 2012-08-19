@@ -109,9 +109,12 @@ namespace muse
 			tail_type tail;
 
 
-			// Constructor
+			// Constructors
+			cons_device(void) 
+				: head(0), tail(0) {};
+
 			explicit cons_device(size_type n) 
-				: head(n), tail(n) {}
+				: head(n), tail(n) {};
 
 			// Accessors
 			inline
@@ -142,6 +145,8 @@ namespace muse
 			// Methods
 			void resize(size_type n) { head.resize(n); tail.resize(n); }
 
+			size_type size(void) const {return head.size(); }
+
 		};
 
 
@@ -160,7 +165,10 @@ namespace muse
 			container_head_type head;
 
 
-			// Constructor
+			// Constructors
+			cons_device(void) 
+				: head(0) {};
+
 			explicit cons_device(size_type n) 
 				: head(n) {}
 
@@ -189,6 +197,8 @@ namespace muse
 
 			// Methods
 			void resize(size_type n) { head.resize(n); }
+
+			size_type size(void) const {return head.size(); }
 		};
 
 

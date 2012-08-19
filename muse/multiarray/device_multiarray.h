@@ -116,10 +116,16 @@ namespace muse
 	public:
 
 		/*!
-		 *  Constructor 
-		 *  \param n number of elements
+		 *  This constructor creates an empty \p device_multiarray 
 		 */
-		device_multiarray(size_type n = 0)
+		device_multiarray(void)
+			: inherited() {};
+
+		/*!
+		 *  This constructor creates a \p device_multiarray with n elements 
+		 *  \param n number of elements to initially create
+		 */
+		explicit device_multiarray(size_type n)
 			: inherited(n) {};
 
 		/*!
@@ -128,11 +134,17 @@ namespace muse
 		~device_multiarray(void) {};
 
 		/*!
-		 *  Resizes each of the multiarray component uniformly to contain n elements
-		 *  \param n new multiarray size expressed in elements
+		 *  Resizes each of the \p device_multiarray component uniformly to contain n elements
+		 *  \param n new \p device_multiarray size expressed in elements
 		 *  \return none
 		 */
 		void resize(size_type n) { inherited::resize(n); }
+
+		/*!
+		 *  Returns the number of elements
+		 *  \return number of elements
+		 */
+		size_type size(void) const { return inherited::size(); }
 
 	private:
 		device_multiarray(const device_multiarray&);

@@ -116,10 +116,16 @@ namespace muse
 	public:
 
 		/*!
-		 *  Constructor 
-		 *  \param n number of elements
+		 *  This constructor creates an empty \p host_multiarray 
 		 */
-		host_multiarray(size_type n = 0)
+		host_multiarray(void)
+			: inherited() {};
+
+		/*!
+		 *  This constructor creates a \p host_multiarray with n elements 
+		 *  \param n number of elements to initially create
+		 */
+		explicit host_multiarray(size_type n)
 			: inherited(n) {};
 
 		/*!
@@ -128,11 +134,17 @@ namespace muse
 		~host_multiarray(void) {};
 
 		/*!
-		 *  Resizes each of the multiarray component uniformly to contain n elements
-		 *  \param n new multiarray size expressed in elements
+		 *  Resizes each of the \p host_multiarray component uniformly to contain n elements
+		 *  \param n new \p host_multiarray size expressed in elements
 		 *  \return none
 		 */
 		void resize(size_type n) { inherited::resize(n); }
+
+		/*!
+		 *  Returns the number of elements
+		 *  \return number of elements
+		 */
+		size_type size(void) const { return inherited::size(); }
 
 	private:
 		host_multiarray(const host_multiarray&);
