@@ -136,7 +136,6 @@ namespace muse
 		/*!
 		 *  Resizes each of the \p host_multiarray component uniformly to contain n elements
 		 *  \param n new \p host_multiarray size expressed in elements
-		 *  \return none
 		 */
 		void resize(size_type n) { inherited::resize(n); }
 
@@ -145,6 +144,17 @@ namespace muse
 		 *  \return number of elements
 		 */
 		size_type size(void) const { return inherited::size(); }
+
+		/*!
+		 *  This method resizes this \p device_multiarray to 0
+		 */
+		void clear(void) { inherited::resize(0); }
+
+		/*!
+		 *  This method returns true if size() == 0
+		 *  \return true if size() == 0; false, otherwise
+		 */
+		bool empty(void) const { return 0 == inherited::size(); }
 
 	private:
 		host_multiarray(const host_multiarray&);
