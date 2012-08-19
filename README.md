@@ -1,4 +1,4 @@
 muse-multiarray
 ===============
 
-Structure of array basing on Thrust containers
+Structure of arrays template basing on device and host vectors from Thrust library.
