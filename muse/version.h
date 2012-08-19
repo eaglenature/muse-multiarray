@@ -2,7 +2,7 @@
  *  \brief Compile-time macros encoding MuSE release version
  *
  *         <muse/version.h> is the only MuSE header that is guaranteed to
- *         change with every thrust release.
+ *         change with every MuSE release.
  */
 #pragma once
 
