@@ -116,11 +116,6 @@ namespace muse
 	public:
 
 		/*!
-		 *  \todo override resize method by calling inherited::resize
-		 */
-		using inherited::resize;
-
-		/*!
 		 *  Constructor 
 		 *  \param n number of elements
 		 */
@@ -131,6 +126,13 @@ namespace muse
 		 *  Default destructor
 		 */
 		~device_multiarray(void) {};
+
+		/*!
+		 *  Resizes each of the multiarray component uniformly to contain n elements
+		 *  \param n new multiarray size expressed in elements
+		 *  \return none
+		 */
+		void resize(size_type n) { inherited::resize(n); }
 
 	private:
 		device_multiarray(const device_multiarray&);
